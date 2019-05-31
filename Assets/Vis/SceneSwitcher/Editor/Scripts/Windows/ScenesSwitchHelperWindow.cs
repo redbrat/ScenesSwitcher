@@ -39,7 +39,7 @@ namespace Vis.SceneSwitcher
 
             string pointersGUID = searchResult[0];
             string pathToPointer = AssetDatabase.GUIDToAssetPath(pointersGUID);
-            string pathToDB = pathToPointer.Substring(0, pathToPointer.Length - _pointersName.Length) + _scenesContainerName;
+            string pathToDB = pathToPointer.Substring(0, pathToPointer.Length - _pointersName.Length - ".bytes".Length) + _scenesContainerName;
 
             var result = (SerializableScenesContainer)AssetDatabase.LoadAssetAtPath(pathToDB, typeof(SerializableScenesContainer));
 
