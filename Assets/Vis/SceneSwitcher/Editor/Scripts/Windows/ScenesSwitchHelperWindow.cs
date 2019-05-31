@@ -202,7 +202,8 @@ namespace Vis.SceneSwitcher
 
             for (int i = 0; i < _scenesContainer.SceneAssets.Count; i++)
             {
-                SceneAsset newAsset = EditorGUILayout.ObjectField(new GUIContent("Scene " + (i + 1).ToString()), _scenesContainer.SceneAssets[i], typeof(SceneAsset), false) as SceneAsset;
+                var sceneNumber = (i + 1).ToString();
+                SceneAsset newAsset = EditorGUILayout.ObjectField(new GUIContent("Scene " + sceneNumber + " (Shift+" + (i + 1).ToString().Substring(sceneNumber.Length - 1) + ")"), _scenesContainer.SceneAssets[i], typeof(SceneAsset), false) as SceneAsset;
                 if (newAsset != _scenesContainer.SceneAssets[i])
                 {
                     _scenesContainer.SceneAssets[i] = newAsset;
